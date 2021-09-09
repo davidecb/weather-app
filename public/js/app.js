@@ -4,6 +4,7 @@ const weatherForm = document.querySelector('form')
 const searchInput = document.querySelector('input')
 const locationMessage = document.querySelector('#locationMsg')
 const forecastMessage = document.querySelector('#forecastMsg')
+const forecastImg = document.querySelector('.weather-img')
 
 locationMessage.textContent = ''
 forecastMessage.textContent = ''
@@ -14,17 +15,14 @@ weatherForm && weatherForm.addEventListener('submit', (e) =>{
     const location = searchInput.value
     const weatherURL = '/weather?address=' + encodeURIComponent(location)
 
-    console.log(weatherURL)
-
     fetch(weatherURL).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 locationMessage.textContent = data.error
-                console.log(data.error)
             } else {
                 locationMessage.textContent = data.location
                 forecastMessage.textContent = data.forecast
-                console.log(data)
+                forecastImg.setAttribute('src', data.icon)
             }
         })
     })

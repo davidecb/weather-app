@@ -13,7 +13,8 @@ const forecast = (latitude, longitude, callback) => {
             const description = response.body.current.weather_descriptions[0]
             const forecastMessage = "the temperature is " + temperature + ", and the weather is " + description        
             callback(undefined, {
-                forecastMessage
+                forecastMessage,
+                icon: response.body.current.weather_icons[0]
             })
         }
     })

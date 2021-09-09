@@ -4,7 +4,7 @@
 
 body {
     color: #333333;
-    max-width: 600px;
+    max-width: 80%px;
     margin: 0 auto;
     padding: 0 10px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -20,7 +20,7 @@ header {
 }
 
 header h1 {
-    font-size: 60px;
+    font-size: 10vw;
 }
 
 header a {
@@ -39,6 +39,12 @@ header a {
 
 .profile-img {
     width: 250px;
+}
+
+.weather-img {
+    width: 150px;
+    border-radius: 100%;
+    border: #888888 groove 2px;
 }
 
 footer {
